@@ -1,26 +1,24 @@
-import React, { Component,createContext } from 'react';
+import React, { useState,createContext } from 'react';
 
 export const LanguageContext = createContext();
 
 ///create Context
-export class LanguageProvider extends Component {
-  state = {
-    language: "spanish"
-  };
+export function LanguageProvider(props) {
 
-changeLanguage =(e)=>{
-  this.setState({language: e.target.value})
-}
+  const [language, setLanguage]=useState("spanish")
+  const changeLanguage =(e)=>{
+    setLanguage(e.target.value)
+  }
 
-  render() {
+
     return (
       //Context.Provide 
       //ThemeContext is the provider
-      <LanguageContext.Provider value={{ ...this.state, changeLanguage: this.changeLanguage }}>
-        {this.props.children}
+      <LanguageContext.Provider value={{ language, changeLanguage }}>
+        {props.children}
       </LanguageContext.Provider>
     );
-  }
+
 }
 
 //Your withLanguageContext HOC (Higher Order Component) seems to be designed to wrap another component and provide it with the LanguageContext and its corresponding value as props.

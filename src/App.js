@@ -5,8 +5,8 @@ import PageContent from './PageContent'
 import { ThemeProvider} from './contexts/ThemeContext'
 import {LanguageProvider} from './contexts/LanguageContext'
 
-class App extends Component {
-  render() {
+function App()  {
+
     return (
       <ThemeProvider>
         <LanguageProvider>
@@ -18,7 +18,7 @@ class App extends Component {
       </ThemeProvider>
 
     );
-  }
+  
 }
 
 export default App;

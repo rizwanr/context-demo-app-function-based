@@ -11,7 +11,7 @@ export function  ThemeProvider(props) {
       //Context.Provide 
       //ThemeContext is the provider
       <ThemeContext.Provider value={{ isDarkMode, toggleTheme}}>
-        {this.props.children}
+        {props.children}
       </ThemeContext.Provider>
     );
   

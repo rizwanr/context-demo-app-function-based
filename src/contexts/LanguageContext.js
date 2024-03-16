@@ -24,10 +24,12 @@ changeLanguage =(e)=>{
 }
 
 //Your withLanguageContext HOC (Higher Order Component) seems to be designed to wrap another component and provide it with the LanguageContext and its corresponding value as props.
-export const withLanguageContext =Component =>props=>(
-  <LanguageContext.Consumer>
-  {value => <Component languageContext={value} {...props}/>}
 
-    </LanguageContext.Consumer>
-  )
+//not needed when using hooks
+// export const withLanguageContext =Component =>props=>(
+//   <LanguageContext.Consumer>
+//   {value => <Component languageContext={value} {...props}/>}
+
+//     </LanguageContext.Consumer>
+//   )
   
